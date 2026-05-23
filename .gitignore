@@ -1,0 +1,28 @@
+venv
+.env
+__pycache__/
+*.pyc   
+
+# MLflow tracking database
+mlflow.db
+
+# MLflow artifact storage (where models/plots are saved)
+mlruns/
+mlartifacts/
+plots/
+
+# SQLite temporary files
+mlflow.db
+
+env_cloud
+
+# Jupyter Notebooks
+juypter_files/
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
