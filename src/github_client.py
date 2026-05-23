@@ -5,7 +5,7 @@ from gql.transport.requests import RequestsHTTPTransport
 from pydantic import BaseModel, Field
 
 # Load the token from .env
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 GITHUB_TOKEN = os.getenv("GITHUB_PAT")
 
 if not GITHUB_TOKEN:
