@@ -88,11 +88,13 @@ def get_file_content(owner: str, repo_name: str, file_path: str, branch: str = "
     text = result['repository']['object']['text']
     return FileContentResponse(text=text)
 
-# 5. Test Execution Block
+# Change this block at the bottom of src/github_client.py:
 if __name__ == "__main__":
-    # Replace these with a repository you want to test against
-    TEST_OWNER = "octocat"
-    TEST_REPO = "Hello-World"
+    # 1. Put your exact GitHub username here
+    TEST_OWNER = "Nishanthan15me104"  
+    
+    # 2. Put your exact repository name here
+    TEST_REPO = "MCP-Native-GitHub-Code-Agent" 
     
     print(f"--- Fetching Tree for {TEST_OWNER}/{TEST_REPO} ---")
     tree_data = get_repo_tree(TEST_OWNER, TEST_REPO)
@@ -100,6 +102,6 @@ if __name__ == "__main__":
         print(f"[{entry.type}] {entry.path}")
         
     print("\n--- Fetching Content for README.md ---")
-    # Fetching a known file in that repo
-    file_data = get_file_content(TEST_OWNER, TEST_REPO, "README")
+    # 3. Change "README" to an actual filename that exists in your repo (like "requirements.txt")
+    file_data = get_file_content(TEST_OWNER, TEST_REPO, "requirements.txt")
     print(file_data.text)
